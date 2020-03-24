@@ -70,6 +70,4 @@ public class TwoPoints {
         result = xDiff / yDiff;
         return result;
     }
-
-
 }//TwoPoints
