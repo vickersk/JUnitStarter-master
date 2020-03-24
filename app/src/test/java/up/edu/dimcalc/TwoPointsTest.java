@@ -41,7 +41,7 @@ public class TwoPointsTest {
         TwoPoints testPoints = new TwoPoints();
         testPoints.setPoint(0, -11, -11);
         Point p1 = testPoints.getPoint(0);
-        testPoints.randomValue(2);
+        testPoints.randomValue(0);
         if (p1.x == -11 & p1.y == -11){
             fail("random values not generated");
         }

@@ -25,25 +25,33 @@ public class TwoPoints {
 
     /** set a point */
     public void setPoint(int index, int x, int y) {
-        points[index].x = x;
-        points[index].y = y;
+        if (index == 0 || index == 1){
+            points[index].x = x;
+            points[index].y = y;
+        }
     }
 
     /** assign a random value to a point */
     public void randomValue(int index) {
-        int x = rand.nextInt(20) - 10;
-        int y = rand.nextInt(20) - 10;
-        setPoint(index, x, y);
+        if (index == 0 || index == 1){
+            int x = rand.nextInt(20) - 10;
+            int y = rand.nextInt(20) - 10;
+            setPoint(index, x, y);
+        }
     }
 
     /** sets a point to the origin */
     public void setOrigin(int index) {
-        setPoint(index, 0, 0);
+        if (index == 0 || index == 1){
+            setPoint(index, 0, 0);
+        }
     }
 
     /** copy the values in one points to the other */
     public void copy(int srcIndex, int destIndex) {
-        points[destIndex] = points[srcIndex];
+        if ((srcIndex == 0 || srcIndex == 1) && (destIndex == 0 || destIndex == 1)){
+            points[destIndex] = points[srcIndex];
+        }
     }
 
     /** calculates the distance between the two points rounded to the nearest integer */
@@ -67,7 +75,11 @@ public class TwoPoints {
         int xDiff = points[0].x - points[1].x;
         int yDiff = points[0].y - points[1].y;
 
-        result = xDiff / yDiff;
-        return result;
+        if (yDiff == 0){
+            return 0.0;
+        } else {
+            result = xDiff / yDiff;
+            return result;
+        }
     }
 }//TwoPoints
